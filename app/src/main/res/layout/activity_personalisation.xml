@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonalisationActivity"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:elevation="4dp"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_button"
+            android:onClick="back_to_profile"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:text="Personalisation"
+            android:textSize="20dp"/>
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageViewProfile"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:src="@drawable/pexels_photo"
+            android:scaleType="centerCrop"
+
+            />
+
+            <ImageView
+                android:id="@+id/imageViewEditImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_edit_light"
+                app:layout_constraintTop_toTopOf="@id/imageViewProfile"
+                app:layout_constraintEnd_toEndOf="@id/imageViewProfile"
+                />
+
+        <EditText
+            android:id="@+id/editTextUserName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="PUPlover"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageViewProfile"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+    
+    <TextView
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Traits" />
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+        
+        <ImageButton
+            android:id="@+id/buttonHeart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/heart"
+            android:scaleType="centerCrop"
+            />
+
+            <ImageButton
+                android:id="@+id/buttonHeadphones"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/headphones"
+                android:scaleType="centerCrop"
+                />
+            <ImageButton
+                android:id="@+id/buttonChair"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/chair"
+                android:scaleType="centerCrop"
+                />
+            <ImageButton
+                android:id="@+id/buttonLock"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/lock"
+                android:scaleType="centerCrop"
+                />
+            <ImageButton
+                android:id="@+id/buttonTrash"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/trash"
+                android:scaleType="centerCrop"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Interests" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/buttonCalculator"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/calculator"
+                android:scaleType="centerCrop"
+                />
+
+            <ImageButton
+                android:id="@+id/buttonTheater"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/theater"
+                android:scaleType="centerCrop"
+                />
+            <ImageButton
+                android:id="@+id/buttonEgg"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/egg"
+                android:scaleType="centerCrop"
+                />
+            <ImageButton
+                android:id="@+id/buttonCar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/car"
+                android:scaleType="centerCrop"
+                />
+            <ImageButton
+                android:id="@+id/buttonKeyboard"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/keyboard"
+                android:scaleType="centerCrop"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Career"/>
+
+        <Button
+            android:id="@+id/popup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose your faction"
+            android:paddingTop="@dimen/activity_horizontal_margin"/>
+        <Button
+            android:id="@+id/buttonSaveChanges"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="#FFFF"
+            android:text="Save changes"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Icons made by "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/link_to_author"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" from "/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/link_to_sight"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" under licence "/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/link_CC"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

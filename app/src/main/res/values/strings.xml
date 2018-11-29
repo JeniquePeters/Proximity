@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Proximity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="sign_in">"Sign in"</string>
+    <string name="sign_up">"Sign up"</string>
+    <string name="link_to_author"><a href="https://www.flaticon.com/authors/pixel-buddha">pixel-buddha</a></string>
+    <string name="link_to_sight"><a href="https://www.flaticon.com/">Flaticon</a></string>
+    <string name="link_CC"><a href="https://www.flaticon.com/">Creative Commons BY 3.0</a></string>
+
+</resources>

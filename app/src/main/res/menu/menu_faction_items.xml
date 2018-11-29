@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/UJ"
+        android:title="University of Johannesburg" />
+    <item android:id="@+id/Wits"
+        android:title="University of Witwatersrand" />
+    <item android:id="@+id/UP"
+        android:title="University of Pretoria" />
+    <item android:id="@+id/UCT"
+        android:title="University of Cape Town" />
+    <item android:id="@+id/Sell"
+        android:title="University Stellenbosch" />
+</menu>

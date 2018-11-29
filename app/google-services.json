@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "789212760702",
+    "firebase_url": "https://proximity5-d95be.firebaseio.com",
+    "project_id": "proximity5-d95be",
+    "storage_bucket": "proximity5-d95be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789212760702:android:cb6866d41c060b8d",
+        "android_client_info": {
+          "package_name": "com.example.jenique.proximity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789212760702-pkhki3cm5dsmeil3ls492nvcekt2e61c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jenique.proximity",
+            "certificate_hash": "8c9ea451b18fbda5128f5b4e8573b436f8617f65"
+          }
+        },
+        {
+          "client_id": "789212760702-47cgarbtq4abvnihjgmcbnl2cnahgk2h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY41kQ3zb9EuCH6MxP9rKTC156N0z89KQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "789212760702-47cgarbtq4abvnihjgmcbnl2cnahgk2h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
