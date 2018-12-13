@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         />
 
-    <TextView
+   <TextView
+        android:id="@+id/textViewSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Search"
@@ -90,6 +91,18 @@
                 android:text="Trending Event"
                 android:textSize="25dp"/>
 
+            <view class="android.support.v7.app.AlertController$RecycleListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </view>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/eventList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,7 +121,7 @@
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Maths contents" />
+                    android:text="Maths contest" />
 
                 <RadioButton
                     android:layout_width="match_parent"

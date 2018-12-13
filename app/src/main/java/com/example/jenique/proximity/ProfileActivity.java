@@ -19,9 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView textViewUsername, textViewStatus;
-    private FirebaseUser user;
     private String uid;
-    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,34 +29,7 @@ public class ProfileActivity extends AppCompatActivity {
         textViewUsername = findViewById(R.id.textViewUsername);
         textViewStatus = findViewById(R.id.textViewStatus);
 
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        if(user!=null)
-            uid = user.getUid();
-        Toast.makeText(getApplicationContext(),"userID is " + uid,Toast.LENGTH_SHORT).show();
-
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String userName = dataSnapshot.child("users").child(uid).child("username").getValue(String.class);
-                String status = dataSnapshot.child("users").child(uid).child("status").getValue(String.class);
-
-                Toast.makeText(getApplicationContext(), userName,Toast.LENGTH_SHORT).show();
-                textViewUsername.setText(userName);
-                textViewStatus.setText(status);
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
     }
-
-
 
     public void To_personalisationActivity(View view) {
         Intent i = new Intent(this, PersonalisationActivity.class);

@@ -209,7 +209,7 @@
             android:id="@+id/buttonSaveChanges"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="#80cbc4"
             android:textColor="#FFFF"
             android:text="Save changes"/>
 

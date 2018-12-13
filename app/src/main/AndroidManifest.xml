@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jenique.proximity">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -23,7 +23,11 @@
         <activity android:name=".PersonalisationActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ProximsActivit" />
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ViewOtherProfileActivity" />
+        <activity android:name=".InvitesSentActivity" />
+        <activity android:name=".InvitesReceivedActivity" />
+        <activity android:name=".PostsActivity"></activity>
     </application>
 
 </manifest>
