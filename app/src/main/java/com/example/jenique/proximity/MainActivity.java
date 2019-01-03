@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void enterHomepage()
     {
-        startActivity(new Intent(this, FactionActivity.class));
+        startActivity(new Intent(MainActivity.this, FactionActivity.class));
     }
 
     private void signInUser(){
@@ -96,6 +96,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     textViewSignUp.setVisibility(View.INVISIBLE);
                     editTextEmail.setVisibility(View.INVISIBLE);
                     progressBar.setVisibility(View.VISIBLE);
+//                    Intent intent = new Intent(MainActivity.this, FactionActivity.class);
+//                    startActivity(intent);
                     enterHomepage();
                 }
 
