@@ -43,8 +43,9 @@
 
     </android.support.v7.widget.RecyclerView>
 
+    //////// RED changed background color as it was = #
     <ImageButton
-        android:background="#"
+        android:background="@color/colorAccent"
         android:layout_margin="20dp"
         android:padding="20dp"
         android:layout_width="wrap_content"

@@ -29,35 +29,35 @@ import java.util.Map;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener firebaseAuthListener;
+//    private FirebaseAuth mAuth;
+//    private FirebaseAuth.AuthStateListener firebaseAuthListener;
 
-    EditText nameI, passwrdI, usernameI, emailI, phoneNrI;
-    Spinner genderSp, professionSp, factionSp, traitsSp, interestsSp, buzzSp;
-    ArrayAdapter<CharSequence> genderAdapt, professionAdapt, factionAdapt, traitsAdapt, interestsAdapt, buzzAdapt;
-    String gend, prof, fact, trait, inter, bzz;
+//    EditText nameI, passwrdI, usernameI, emailI, phoneNrI;
+//    Spinner genderSp, professionSp, factionSp, traitsSp, interestsSp, buzzSp;
+//    ArrayAdapter<CharSequence> genderAdapt, professionAdapt, factionAdapt, traitsAdapt, interestsAdapt, buzzAdapt;
+//    String gend, prof, fact, trait, inter, bzz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        setSpinners();
-        setInfoVars();
-
-        mAuth = FirebaseAuth.getInstance();
-        firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if (user != null) {
-                    Intent intent = new Intent(SignUpActivity.this, FactionActivity.class);
-                    startActivity(intent);
-                    finish();
-                    return;
-                }
-            }
-        };
+//        setSpinners();
+//        setInfoVars();
+//
+//        mAuth = FirebaseAuth.getInstance();
+//        firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
+//            @Override
+//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+//                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//                if (user != null) {
+//                    Intent intent = new Intent(SignUpActivity.this, FactionActivity.class);
+//                    startActivity(intent);
+//                    finish();
+//                    return;
+//                }
+//            }
+//        };
     }
 
     public void login(View view) {
@@ -68,71 +68,71 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void registerMe(View view) {
-        final String email = emailI.getText().toString();
-        final String username = usernameI.getText().toString();
-        final String name = nameI.getText().toString();
-//        final String phoneNr = phoneNrI.getText().toString();
-        final String password = passwrdI.getText().toString();
-
-//        if (email == "" || username == "" || name == "" || password == "") {
-//            Toast.makeText(RegisterActivity.this, "some fields are empty. please complete all fields", Toast.LENGTH_SHORT).show();
+//        final String email = emailI.getText().toString();
+//        final String username = usernameI.getText().toString();
+//        final String name = nameI.getText().toString();
+////        final String phoneNr = phoneNrI.getText().toString();
+//        final String password = passwrdI.getText().toString();
 //
-//        } else {
-
-        Query usernameQuery = FirebaseDatabase.getInstance().getReference().child("Users").orderByChild("username").equalTo(username);
-        usernameQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getChildrenCount() > 0) {
-                    Toast.makeText(SignUpActivity.this, "Username already in use", Toast.LENGTH_SHORT).show();
-                } else {
-                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful()) {
-                                Toast.makeText(SignUpActivity.this, "Sign-up Error", Toast.LENGTH_SHORT).show();
-                            } else {
-                                String user_id = mAuth.getCurrentUser().getUid();
-                                final DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
-
-                                Map newPost = new HashMap();
-                                newPost.put("name", name);
-                                newPost.put("username", username);
-//                                    newPost.put("phoneNr", phoneNr); //for some reason, won't allow nr...
-                                newPost.put("gender", gend);
-                                newPost.put("profession", prof);
-                                newPost.put("faction", fact);
-                                newPost.put("interests", inter);
-                                newPost.put("traits", trait);
-                                newPost.put("buzz", bzz);
-                                newPost.put("invToken", user_id);
-
-                                current_user_db.setValue(newPost);
-
-                                String uname = mAuth.getUid();
-                                Toast.makeText(SignUpActivity.this, uname + "uname and user_id" + user_id, Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(SignUpActivity.this, "Database Error" + databaseError, Toast.LENGTH_SHORT).show();
-
-            }
-        });
+////        if (email == "" || username == "" || name == "" || password == "") {
+////            Toast.makeText(RegisterActivity.this, "some fields are empty. please complete all fields", Toast.LENGTH_SHORT).show();
+////
+////        } else {
+//
+//        Query usernameQuery = FirebaseDatabase.getInstance().getReference().child("Users").orderByChild("username").equalTo(username);
+//        usernameQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                if (dataSnapshot.getChildrenCount() > 0) {
+//                    Toast.makeText(SignUpActivity.this, "Username already in use", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<AuthResult> task) {
+//                            if (!task.isSuccessful()) {
+//                                Toast.makeText(SignUpActivity.this, "Sign-up Error", Toast.LENGTH_SHORT).show();
+//                            } else {
+//                                String user_id = mAuth.getCurrentUser().getUid();
+//                                final DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+//
+//                                Map newPost = new HashMap();
+//                                newPost.put("name", name);
+//                                newPost.put("username", username);
+////                                    newPost.put("phoneNr", phoneNr); //for some reason, won't allow nr...
+//                                newPost.put("gender", gend);
+//                                newPost.put("profession", prof);
+//                                newPost.put("faction", fact);
+//                                newPost.put("interests", inter);
+//                                newPost.put("traits", trait);
+//                                newPost.put("buzz", bzz);
+//                                newPost.put("invToken", user_id);
+//
+//                                current_user_db.setValue(newPost);
+//
+//                                String uname = mAuth.getUid();
+//                                Toast.makeText(SignUpActivity.this, uname + "uname and user_id" + user_id, Toast.LENGTH_SHORT).show();
+//                            }
+//                        }
+//                    });
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                Toast.makeText(SignUpActivity.this, "Database Error" + databaseError, Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
     }
 
 //    }
 
     private void setInfoVars() {
-//        nameI = findViewById(R.id.name);
-        usernameI = findViewById(R.id.editTextUsername);
-        emailI = findViewById(R.id.userEmail);
-//        phoneNrI = findViewById(R.id.phoneNr);
-        passwrdI = findViewById(R.id.userPassword);
+////        nameI = findViewById(R.id.name);
+//        usernameI = findViewById(R.id.editTextUsername);
+//        emailI = findViewById(R.id.userEmail);
+////        phoneNrI = findViewById(R.id.phoneNr);
+//        passwrdI = findViewById(R.id.userPassword);
     }
 
     private void setSpinners() {
@@ -240,19 +240,20 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });*/
     }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(firebaseAuthListener);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if (mAuth != null) {
-            mAuth.removeAuthStateListener(firebaseAuthListener);
-        }
-    }
+////////////////////////////////RED COMMENT
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        mAuth.addAuthStateListener(firebaseAuthListener);
+//    }
+//
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        if (mAuth != null) {
+//            mAuth.removeAuthStateListener(firebaseAuthListener);
+//        }
+//    }
+    //////////////////////////////////
 }
 
